@@ -16,7 +16,7 @@ for task in $(find "$test_dir" -mindepth 1 -maxdepth 1 -not -name '.*' -type d -
     echo >> $results
 
     echo "Compiler output:" >> $results
-    g++ "*_$task.cpp" -o "$task.out" -std=c++14 -Wpedantic &>> $results
+    g++ fn*_d1_$task.cpp -o "$task.out" -std=c++14 -Wpedantic &>> $results
 
     if [ $? -eq 0 ]; then
         echo >> $results
